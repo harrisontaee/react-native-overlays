@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+	  "baseUrl": "./",
+	  "paths": {
+		 "@harrisontaee/react-native-overlays": ["./src/index"]
+	  },
+	  "lib": ["DOM", "ESNext"],
+	  "jsx": "react-jsx"
+	}
+ }
