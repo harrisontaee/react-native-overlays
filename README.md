@@ -2,7 +2,7 @@
 
 A simple system for rendering multiple dropdown windows and overlays at given coordinates.
 
-![](demo.mp4)
+![](demo.gif)
 
 ## Installation
 ```bash
@@ -117,5 +117,3 @@ export default function ExampleComponent() {
    );
 };
 ```
-
-```tsx
