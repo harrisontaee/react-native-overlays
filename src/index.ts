@@ -1,4 +1,4 @@
-import OverlayActionsProvider, {useOverlayActions} from "./Context";
+import OverlaysProvider, {useOverlays} from "./Context";
 
-export {useOverlayActions};
-export default OverlayActionsProvider;
+export {useOverlays};
+export default OverlaysProvider;

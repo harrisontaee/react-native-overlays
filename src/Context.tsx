@@ -30,7 +30,7 @@ export type OverlayActions = {
 /**
  * Context used to modify the overlay stack
  */
-const OverlayActionsContext = createContext<OverlayActions>(null as OverlayActions);
+const OverlaysContext = createContext<OverlayActions>({} as OverlayActions);
 
 
 
@@ -40,8 +40,8 @@ const OverlayActionsContext = createContext<OverlayActions>(null as OverlayActio
  - pop: Removes the topmost overlay
  - clear: Removes all overlays
  */
-export const useOverlayActions = () => {
-	return useContext(OverlayActionsContext);
+export const useOverlays = () => {
+	return useContext(OverlaysContext);
 };
 
 
@@ -50,7 +50,13 @@ export const useOverlayActions = () => {
  * Provides the overlay context. Make sure to wrap your app in this component.
  - WARNING: This component handles safe area insets automatically and should be wrapped in the SafeAreaProvider from react-native-safe-area-context
  */
-const OverlayActionsProvider = ({children}: {children: ReactNode}) => {
+const OverlaysProvider = ({
+	colour,
+	children
+}: {
+	colour?: string,
+	children: ReactNode
+}) => {
 	const [overlays, setOverlays] = useState<[ReactNode, OverlayProps][]>([]);
 	
 	
@@ -68,20 +74,21 @@ const OverlayActionsProvider = ({children}: {children: ReactNode}) => {
 
 
 	return (
-		<OverlayActionsContext.Provider value={actions}>
+		<OverlaysContext.Provider value={actions}>
 			{children}
 			{overlays.map(([Component, props], index) => (
 				<Overlay
 					key={index}
+					colour={colour}
 					actions={actions}
 					{...props}>
 					{Component}
 				</Overlay>
 			))}
-		</OverlayActionsContext.Provider>
+		</OverlaysContext.Provider>
 	);
 };
 
 
 
-export default OverlayActionsProvider;
+export default OverlaysProvider;

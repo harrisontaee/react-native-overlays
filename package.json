@@ -2,7 +2,7 @@
 	"name": "@harrisontaee/react-native-overlays",
 	"author": "Harrison Taee <harrisontaee@protonmail.com> (https://github.com/harrisontaee)",
 	"license": "MIT",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Library for rendering dropdown windows and overlays at given screen coordinates",
 	"repository": "https://github.com/harrisontaee/react-native-overlays.git",
 	"homepage": "https://github.com/harrisontaee/react-native-overlays#readme",
