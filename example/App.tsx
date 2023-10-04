@@ -1,4 +1,4 @@
-import OverlayActionsProvider, {useOverlayActions} from "@harrisontaee/react-native-overlays";
+import OverlayActionsProvider, {useOverlays} from "@harrisontaee/react-native-overlays";
 import {Pressable, StyleSheet, Text, View, useWindowDimensions} from "react-native";
 import {SafeAreaProvider, useSafeAreaInsets} from "react-native-safe-area-context";
 
@@ -6,7 +6,7 @@ const BUTTON_HEIGHT = 70;
 const PADDING = 10;
 
 const Home = () => {
-	const overlays = useOverlayActions();
+	const overlays = useOverlays();
 	const screen = useWindowDimensions();
 	const insets = useSafeAreaInsets();
 
